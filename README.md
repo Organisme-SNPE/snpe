@@ -1,39 +1,43 @@
-**Welcome to your Base44 project** 
+# SNPE Website
 
-**About**
+Un site web React pour l'organisation SNPE, construit avec Vite et Tailwind CSS.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+## Démarrage
 
-This project contains everything you need to run your app locally.
+1. Clonez le dépôt :
+   ```
+   git clone https://github.com/Organisme-SNPE/snpe.git
+   ```
 
-**Edit the code in your local development environment**
+2. Installez les dépendances :
+   ```
+   npm install
+   ```
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+3. Lancez le serveur de développement :
+   ```
+   npm run dev
+   ```
 
-**Prerequisites:** 
+4. Ouvrez [http://localhost:5173](http://localhost:5173) dans votre navigateur.
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+## Scripts disponibles
 
-```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
+- `npm run dev` : Lance le serveur de développement
+- `npm run build` : Construit l'application pour la production
+- `npm run preview` : Prévisualise la version de production
+- `npm run lint` : Vérifie le code avec ESLint
+- `npm run typecheck` : Vérifie les types TypeScript
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
-```
+## Technologies utilisées
 
-Run the app: `npm run dev`
+- React
+- Vite
+- Tailwind CSS
+- Radix UI
+- React Router
+- TanStack Query
 
-**Publish your changes**
+## Déploiement
 
-Open [Base44.com](http://Base44.com) and click on Publish.
-
-**Docs & Support**
-
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
-
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+Le site est configuré pour être déployé sur Netlify. Voir `netlify.toml` pour la configuration.

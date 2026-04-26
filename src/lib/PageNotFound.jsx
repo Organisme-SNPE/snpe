@@ -20,19 +20,12 @@ export default function PageNotFound({}) {
                             The page <span className="text-pulse">"{pageName}"</span> could not be found.
                         </p>
                     </div>
-                    {isFetched && authData.isAuthenticated && authData.user?.role === 'admin' && (
-                        <div className="mt-8 p-4 bg-glass border border-border rounded-sm">
-                            <p className="text-sm text-muted-foreground">
-                                Admin: This page hasn't been implemented yet.
-                            </p>
-                        </div>
-                    )}
                     <div className="pt-6">
                         <button 
                             onClick={() => window.location.href = '/'} 
                             className="px-8 py-3 bg-pulse/10 border border-pulse/50 text-pulse font-heading text-sm tracking-widest uppercase hover:bg-pulse hover:text-void transition-all duration-300"
                         >
-                            Return to Base
+                            Return to Home
                         </button>
                     </div>
                 </div>

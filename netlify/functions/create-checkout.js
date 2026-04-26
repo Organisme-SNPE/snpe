@@ -13,7 +13,7 @@ exports.handler = async (event) => {
       };
     }
 
-    const origin = event.headers.origin || 'https://snpe.netlify.app'; // Remplacez par votre domaine Netlify
+    const origin = event.headers.origin || 'https://votre-domaine-netlify.netlify.app'; // Remplacez par votre domaine Netlify réel
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],

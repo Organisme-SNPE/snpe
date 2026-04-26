@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Droplets, Shield, Swords, Sparkles, ArrowRight, Check } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
 
 const causes = [
   { id: 'urgence', label: "Aide d'urgence", description: "Réponse immédiate aux crises humanitaires", icon: Swords, color: 'text-red-400' },
@@ -24,20 +23,29 @@ export default function Donation() {
   const finalAmount = customAmount ? parseInt(customAmount) : selectedAmount;
 
   const handleDonate = async () => {
-    if (window.self !== window.top) {
-      alert("Le paiement fonctionne uniquement depuis l'application publiée.");
-      return;
-    }
     if (!finalAmount || finalAmount < 1) return;
 
     setLoading(true);
-    const res = await base44.functions.invoke('createDonationCheckout', {
-      amount: finalAmount,
-      cause: selectedCause,
-      causeLabel: causes.find(c => c.id === selectedCause)?.label,
-    });
-    if (res.data?.url) {
-      window.location.href = res.data.url;
+    try {
+      const response = await fetch('/.netlify/functions/create-checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: finalAmount,
+          cause: selectedCause,
+          causeLabel: causes.find(c => c.id === selectedCause)?.label,
+        }),
+      });
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert('Erreur lors de la création du paiement: ' + (data.error || 'Erreur inconnue'));
+      }
+    } catch (error) {
+      alert('Erreur réseau: ' + error.message);
     }
     setLoading(false);
   };

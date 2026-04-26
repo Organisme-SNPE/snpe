@@ -23,6 +23,10 @@ export default function Donation() {
   const finalAmount = customAmount ? parseInt(customAmount) : selectedAmount;
 
   const handleDonate = async () => {
+    alert("Le paiement est en cours de configuration. Revenez plus tard !");
+    return;
+    // Code commenté temporairement
+    /*
     if (!finalAmount || finalAmount < 1) return;
 
     setLoading(true);
@@ -57,6 +61,7 @@ export default function Donation() {
       alert('Erreur réseau: ' + error.message);
     }
     setLoading(false);
+    */
   };
 
   return (

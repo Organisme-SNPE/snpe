@@ -38,7 +38,16 @@ export default function Donation() {
           causeLabel: causes.find(c => c.id === selectedCause)?.label,
         }),
       });
+
+      if (!response.ok) {
+        const text = await response.text();
+        alert('Erreur HTTP: ' + response.status + ' - ' + text);
+        setLoading(false);
+        return;
+      }
+
       const data = await response.json();
+      console.log('Response data:', data);
       if (data.url) {
         window.location.href = data.url;
       } else {

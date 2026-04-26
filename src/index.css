@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* White background */
+    --background: 0 0% 100%;
+    --foreground: 210 60% 20%;
+    --card: 210 30% 97%;
+    --card-foreground: 210 60% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 20%;
+    /* Yale Blue as primary */
+    --primary: 210 60% 28%;
+    --primary-foreground: 0 0% 100%;
+    /* Fresh Sky as secondary */
+    --secondary: 205 55% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 210 30% 45%;
+    /* Cerulean as accent */
+    --accent: 205 45% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 25% 85%;
+    --input: 210 25% 85%;
+    --ring: 210 60% 28%;
+    --chart-1: 205 55% 58%;
+    --chart-2: 205 45% 50%;
+    --chart-3: 210 52% 31%;
+    --chart-4: 205 30% 72%;
+    --chart-5: 210 60% 24%;
+    --radius: 0.5rem;
+    --sidebar-background: 210 30% 97%;
+    --sidebar-foreground: 210 60% 20%;
+    --sidebar-primary: 210 60% 28%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 205 55% 58%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 25% 85%;
+    --sidebar-ring: 210 60% 28%;
+  }
+
+  .dark {
+    --background: 0 0% 100%;
+    --foreground: 210 60% 20%;
+    --card: 210 30% 97%;
+    --card-foreground: 210 60% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 20%;
+    --primary: 210 60% 28%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 205 55% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 210 30% 45%;
+    --accent: 205 45% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 25% 85%;
+    --input: 210 25% 85%;
+    --ring: 210 60% 28%;
+    --chart-1: 205 55% 58%;
+    --chart-2: 205 45% 50%;
+    --chart-3: 210 52% 31%;
+    --chart-4: 205 30% 72%;
+    --chart-5: 210 60% 24%;
+    --sidebar-background: 210 30% 97%;
+    --sidebar-foreground: 210 60% 20%;
+    --sidebar-primary: 210 60% 28%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 205 55% 58%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 25% 85%;
+    --sidebar-ring: 210 60% 28%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  [dir="rtl"] .text-left {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-right {
+    text-align: left;
+  }
+
+  [dir="rtl"] .ml-auto {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  [dir="rtl"] .mr-auto {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(210 20% 94%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(210 30% 75%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(210 60% 28%);
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(91, 172, 211, 0.35), 0 0 40px rgba(91, 172, 211, 0.15);
+}
+.glow-gold {
+  box-shadow: 0 0 20px rgba(49, 119, 161, 0.35), 0 0 40px rgba(49, 119, 161, 0.15);
+}
+.text-glow-cyan {
+  text-shadow: 0 0 20px rgba(91, 172, 211, 0.6);
+}
+.text-glow-gold {
+  text-shadow: 0 0 20px rgba(49, 119, 161, 0.6);
+}
